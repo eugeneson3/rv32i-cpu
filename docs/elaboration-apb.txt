@@ -1,0 +1,14 @@
+pyslang 12.1.0
+Top tb_rv32i_cpu
+Default timescale 1ns/1ps
+Errors 0
+
+apb\rtl\data_memory.sv:24:21: warning: 'case' missing 'default' label [-Wcase-default]
+                    case (byte_offset)
+                    ^~~~
+apb\rtl\data_memory.sv:34:21: warning: 'case' missing 'default' label [-Wcase-default]
+                    case (byte_offset[1])
+                    ^~~~
+apb\rtl\datapath.sv:244:36: warning: implicit conversion changes signedness from 'logic signed[31:0]' to 'logic[31:0]' [-Wsign-conversion]
+            4'b1_101: alu_result = $signed(a) >>> b[4:0];               // SRA
+                                 ~ ^~~~~~~~~~~~~~~~~~~~~

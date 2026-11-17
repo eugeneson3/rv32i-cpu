@@ -1,0 +1,56 @@
+pyslang 12.1.0
+Top tb_rv32i_cpu
+Default timescale 1ns/1ps
+Errors 0
+
+cpu\rtl\data_memory.sv:20:11: warning: 'case' missing 'default' label [-Wcase-default]
+          case (daddr[1:0])                       // Decode byte offset within word
+          ^~~~
+cpu\rtl\data_memory.sv:34:5: warning: 'case' missing 'default' label [-Wcase-default]
+    case(itype)                     // Decode load instruction type by funct3
+    ^~~~
+cpu\rtl\data_memory.sv:41:9: warning: 'case' missing 'default' label [-Wcase-default]
+        case (daddr[1:0])                     // Select byte by lower 2 bits of address
+        ^~~~
+cpu\rtl\data_memory.sv:42:27: warning: implicit conversion expands from 24 to 32 bits [-Wwidth-expand]
+          2'b00: drdata = {{16{data_reg[daddr[31:2]] [7]}}, data_reg[daddr[31:2]] [7:0]};   // Byte 0 sign extension
+                        ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cpu\rtl\data_memory.sv:43:27: warning: implicit conversion expands from 24 to 32 bits [-Wwidth-expand]
+          2'b01: drdata = {{16{data_reg[daddr[31:2]] [15]}}, data_reg[daddr[31:2]] [15:8]};  // Byte 1 sign extension
+                        ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cpu\rtl\data_memory.sv:44:27: warning: implicit conversion expands from 24 to 32 bits [-Wwidth-expand]
+          2'b10: drdata = {{16{data_reg[daddr[31:2]] [23]}}, data_reg[daddr[31:2]] [23:16]}; // Byte 2 sign extension
+                        ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cpu\rtl\data_memory.sv:45:27: warning: implicit conversion expands from 24 to 32 bits [-Wwidth-expand]
+          2'b11: drdata = {{16{data_reg[daddr[31:2]] [31]}}, data_reg[daddr[31:2]] [31:24]}; // Byte 3 sign extension
+                        ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cpu\rtl\data_memory.sv:53:9: warning: 'case' missing 'default' label [-Wcase-default]
+        case (daddr[1:0])                     // Select byte by lower 2 bits of address
+        ^~~~
+cpu\rtl\control_unit.sv:58:5: warning: 'case' missing 'default' label [-Wcase-default]
+    case(c_state)
+    ^~~~
+cpu\rtl\control_unit.sv:64:9: warning: 'case' missing 'default' label [-Wcase-default]
+        case(opcode)
+        ^~~~
+cpu\rtl\datapath.sv:183:3: warning: 'case' missing 'default' label [-Wcase-default]
+                case(alu_control)
+                ^~~~
+cpu\rtl\datapath.sv:192:30: warning: implicit conversion changes signedness from 'logic signed[31:0]' to 'logic[31:0]' [-Wsign-conversion]
+      4'b1101:  alu_result = $signed(rs1) >>> rs2; // sra
+                           ~ ^~~~~~~~~~~~~~~~~~~~
+cpu\rtl\datapath.sv:193:31: warning: implicit conversion expands from 1 to 32 bits [-Wwidth-expand]
+      4'b0010:  alu_result = ($signed(rs1) < $signed(rs2)); // slt
+                           ~  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+cpu\rtl\datapath.sv:194:31: warning: implicit conversion expands from 1 to 32 bits [-Wwidth-expand]
+      4'b0011:  alu_result = (rs1 < rs2); // sltu
+                           ~  ^~~~~~~~~
+cpu\rtl\datapath.sv:200:5: warning: 'case' missing 'default' label [-Wcase-default]
+    case(alu_control)
+    ^~~~
+cpu\rtl\datapath.sv:258:5: warning: 'case' missing 'default' label [-Wcase-default]
+    case(opcode)
+    ^~~~
+cpu\rtl\datapath.sv:309:5: warning: 'case' missing 'default' label [-Wcase-default]
+    case(sel)
+    ^~~~

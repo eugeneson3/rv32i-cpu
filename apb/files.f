@@ -1,0 +1,10 @@
+rtl/rv32_pkg.sv
+rtl/apb_gpio.sv
+rtl/apb_master.sv
+rtl/apb_ram.sv
+rtl/control_unit.sv
+rtl/data_memory.sv
+rtl/datapath.sv
+rtl/instruction_rom.sv
+rtl/rv32i_cpu.sv
+tb/tb_rv32i_cpu.sv
